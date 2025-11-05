@@ -1,0 +1,397 @@
+/* Configurações Globais e Nova Paleta de Cores */
+:root {
+    --color-primary: #1A237E; /* Índigo Escuro */
+    --color-secondary: #283593; /* Índigo Médio */
+    --color-accent: #00BCD4; /* Ciano Vibrante */
+    --color-warning: #FFD700; /* Dourado para destaque/alerta */
+    --color-whatsapp: #25D366; /* Verde WhatsApp padrão */
+    --color-instagram-start: #fdf497; /* Gradiente Instagram */
+    --color-instagram-middle: #fd5949;
+    --color-instagram-end: #d6249f;
+    
+    --color-background: #F5F7FA; /* Fundo limpo e claro */
+    --color-text: #333333; /* Texto principal */
+    --color-text-light: #f0f0f0; /* Texto claro para fundos escuros */
+    --color-light-gray: #E0E0E0; /* Linhas, bordas leves */
+}
+
+/* Reset Básico (Mantido) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Rolagem suave para âncoras */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ESTILO DE BOTÕES GERAIS --- */
+.btn {
+    display: inline-block;
+    padding: 14px 35px; /* Um pouco maiores */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para botões */
+}
+
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: white;
+    font-size: 1.1em;
+    padding: 16px 45px; /* Mais destaque */
+    border: none;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DA851; /* Tom um pouco mais escuro do verde */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- HERO SECTION (TOPO) --- */
+.hero-section {
+    background: linear-gradient(rgba(26, 35, 126, 0.85), rgba(40, 53, 147, 0.85)), 
+                url('https://via.placeholder.com/1500x700/1A237E/FFFFFF?text=Barbosatech+Assistência+Técnica'); /* Imagem de fundo relevante */
+    background-size: cover;
+    background-position: center;
+    color: var(--color-text-light);
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Garante que elementos flutuantes não saiam */
+}
+
+.hero-section::before { /* Efeito de degradê sutil na parte inferior */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top, var(--color-background) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0.5;
+}
+
+.hero-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5em; /* Um pouco maior */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra mais intensa */
+    letter-spacing: 2px;
+}
+
+.hero-section h2 {
+    font-size: 2.5em; /* Maior destaque */
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.hero-section .highlight {
+    color: var(--color-warning); /* Destaque com o dourado */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section p {
+    font-size: 1.3em; /* Mais legível */
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- SEÇÃO DE SERVIÇOS --- */
+.services-section {
+    padding: 80px 0; /* Mais espaçamento */
+    text-align: center;
+    background-color: white; /* Fundo branco para seções principais */
+}
+
+.services-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em; /* Maior e mais impactante */
+    color: var(--color-primary);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block; /* Para o sublinhado */
+}
+
+.services-section h3::after { /* Linha de destaque sob o título */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.service-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: var(--color-background); /* Fundo claro para cards */
+    padding: 35px; /* Mais preenchimento */
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra mais suave e profissional */
+    flex: 1;
+    min-width: 280px; /* Um pouco maior */
+    max-width: 350px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    border-bottom: 5px solid var(--color-primary); /* Borda de destaque */
+    display: flex; /* Para centralizar o ícone e o texto verticalmente */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px); /* Efeito de levitar maior */
+    border-color: var(--color-accent); /* Borda muda para cor de destaque no hover */
+}
+
+.service-card i {
+    font-size: 3.5em; /* Ícones maiores */
+    margin-bottom: 20px;
+    color: var(--color-accent); /* Ícones na cor de destaque */
+    transition: color 0.3s ease;
+}
+
+/* Removido as classes icon-blue, icon-red, etc. para usar a cor de destaque */
+.service-card:hover i {
+    color: var(--color-primary); /* Ícone principal ao passar o mouse */
+}
+
+.service-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6em; /* Títulos maiores */
+    margin-bottom: 12px;
+    color: var(--color-primary);
+}
+
+.service-card p {
+    font-size: 1em;
+    color: var(--color-text);
+}
+
+
+/* --- SEÇÃO VANTAGENS --- */
+.vantagens-section {
+    background-color: var(--color-primary); /* Fundo com a cor principal */
+    color: var(--color-text-light);
+    padding: 70px 0; /* Mais espaçamento */
+    text-align: center;
+}
+
+.vantagens-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: white; /* Título branco */
+    position: relative;
+    display: inline-block;
+}
+
+.vantagens-section h3::after { /* Linha de destaque sob o título */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-warning); /* Linha dourada */
+    border-radius: 2px;
+}
+
+.vantagens-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espaço entre as vantagens */
+    flex-wrap: wrap;
+    font-size: 1.1em;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vantagens-grid p {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente mais sutil */
+    padding: 20px 30px;
+    border-radius: 8px;
+    flex-basis: calc(50% - 15px); /* Duas colunas em desktop com gap */
+    text-align: left;
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.vantagens-grid p:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.vantagens-grid .fa-check-circle {
+    color: var(--color-warning); /* Cor de destaque para os checks */
+    margin-right: 15px; /* Mais espaço */
+    font-size: 1.4em; /* Ícone maior */
+    flex-shrink: 0; /* Impede que o ícone encolha */
+}
+
+
+/* --- SEÇÃO CTA (Call to Action) --- */
+.cta-section {
+    background-color: var(--color-secondary); /* Usa o azul secundário */
+    color: var(--color-text-light);
+    padding: 70px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-section h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 35px;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: var(--color-text); /* Fundo cinza escuro para o rodapé */
+    color: #bbb;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* ================================== */
+/* === BOTÕES FIXADOS (FLUTUANTES) === */
+/* ================================== */
+
+.fixed-buttons {
+    position: fixed;
+    right: 25px; /* Um pouco mais afastado */
+    bottom: 25px; /* Um pouco mais afastado */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Mais espaço entre os botões */
+}
+
+.btn-fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px; /* Botões um pouco maiores */
+    height: 65px;
+    border-radius: 50%;
+    color: white;
+    font-size: 2em; /* Ícones maiores */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35); /* Sombra mais proeminente */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-fixed:hover {
+    transform: scale(1.15); /* Efeito de zoom maior */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.btn-fixed.whatsapp {
+    background-color: var(--color-whatsapp);
+}
+
+.btn-fixed.instagram {
+    background: radial-gradient(circle at 30% 107%, var(--color-instagram-start) 0%, var(--color-instagram-start) 5%, var(--color-instagram-middle) 45%, var(--color-instagram-end) 60%, #285AEB 90%);
+}
+
+
+/* --- RESPONSIVIDADE (Ajustes para Mobile) --- */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 100px 0;
+    }
+    .hero-section h1 {
+        font-size: 3em;
+    }
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .services-section h3, .vantagens-section h3, .cta-section h4 {
+        font-size: 2em; /* Títulos menores em mobile */
+    }
+
+    .service-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .vantagens-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .vantagens-grid p {
+        flex-basis: 100%; /* Ocupa largura total */
+        padding: 15px 20px;
+    }
+    
+    .btn-whatsapp {
+        font-size: 1em;
+        padding: 12px 30px;
+    }
+
+    .fixed-buttons {
+        right: 15px;
+        bottom: 15px;
+        gap: 12px;
+    }
+    .btn-fixed {
+        width: 55px;
+        height: 55px;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section h2 {
+        font-size: 1.3em;
+    }
+    .services-section h3, .vantagens-section h3, .cta-section h4 {
+        font-size: 1.8em;
+    }
+}
