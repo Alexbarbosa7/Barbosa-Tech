@@ -395,3 +395,121 @@ footer {
         font-size: 1.8em;
     }
 }
+
+
+
+/* --- SEÇÃO DE LOCALIZAÇÃO (NOVO) --- */
+.location-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--color-background);
+}
+
+.location-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    color: var(--color-primary);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.location-section h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.location-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Alinha o texto ao topo */
+    text-align: left;
+}
+
+.address-info {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.address-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-light-gray);
+    padding-bottom: 10px;
+}
+
+.address-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.address-info .address {
+    font-weight: 600;
+}
+
+.address-info .horario {
+    margin-top: 20px;
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.map-placeholder {
+    flex: 2; /* O mapa ocupa mais espaço */
+    min-height: 400px;
+    background-color: var(--color-light-gray);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map-placeholder iframe {
+    display: block;
+}
+
+.btn-map {
+    margin-top: 25px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 10px 25px;
+    font-size: 1em;
+    border: 2px solid var(--color-accent);
+}
+
+.btn-map:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- RESPONSIVIDADE PARA LOCALIZAÇÃO --- */
+@media (max-width: 992px) {
+    .location-content {
+        flex-direction: column;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    .address-info, .map-placeholder {
+        flex: auto;
+    }
+}
+
+@media (max-width: 480px) {
+     .location-section h3 {
+        font-size: 1.8em;
+     }
+}
